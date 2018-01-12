@@ -1,0 +1,824 @@
+  #map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+  }
+
+  .prof-li {
+    font-size: 20px;
+    margin: 20px auto auto 20px
+  }
+
+  .img-circle {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto 10px 20px;
+    float: left;
+  }
+
+  #user_email {
+    color: rgb(124, 120, 120);
+    padding: 15px 15px
+  }
+
+  h3 {
+    float: right;
+    margin-right: 20px;
+  }
+
+  .pac-container {
+    background-color: #FFF;
+    z-index: 20;
+    position: fixed;
+    display: inline-block;
+    float: left;
+  }
+
+  .modal {
+    margin-top: 10%;
+    z-index: 20;
+  }
+
+  .modal-backdrop {
+    z-index: 10;
+  }
+
+  body {
+    padding-top: 70px;
+  }
+
+  ​ .jumbotron {
+    margin-top: 3%;
+  }
+
+  #user-not-logged-in {
+    margin-top: 10%;
+  }
+
+  #allOfTheTrips {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tryThis {
+    width: 20%;
+    background-color: grey;
+    margin: 2% 5%;
+    border-radius: 10px;
+    float: left;
+    flex-grow: 1;
+    width: 20%;
+    background-color: grey;
+    margin: 2% 5%;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    transition: transform .5s;
+    cursor: pointer;
+  }
+
+  .tryThis:hover {
+    transform: scale(1.025);
+    box-shadow: 5px 5px 5px black;
+  }
+
+  .tryThis p {
+    font-size: 20px;
+  }
+
+  .tryThis h1 {
+    color: white;
+  }
+
+  .modal-body {
+    background-color: gray;
+  }
+
+  a:hover {
+    background-color: rgb(56, 56, 56);
+    color: white;
+  }
+
+  .modalbtn {
+    background-color: black;
+    color: white;
+  }
+
+  .close,
+  .modal-title {
+    color: white;
+  }
+
+  .create-a-crawl-btn {
+    margin-left: -16px;
+  }
+
+  .col-sm-12 {
+    padding: 10px;
+  }
+
+  .col-sm-12,
+  .modal-header,
+  .modal-footer {
+    background-color: black;
+  }
+  /* The switch - the box around the slider */
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  /* Hide default HTML checkbox */
+
+  .switch input {
+    display: none;
+  }
+  /* The slider */
+
+  .slider.round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider.round:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  /* Rounded sliders */
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .hero-search-filter {
+    background: url("https://images.pexels.com/photos/115095/pexels-photo-115095.jpeg?w=940&h=650&auto=compress&cs=tinysrgb") center center no-repeat;
+    height: 300px;
+    background-size: cover;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .hero-search-filter-logo {
+    margin-bottom: 2rem;
+  }
+
+  .hero-search-filter-content {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 300px;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .hero-search-filter-menu {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  @media screen and (max-width: 39.9375em) {
+    .hero-search-filter-menu li {
+      -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+    }
+    .hero-search-filter-menu li a {
+      -webkit-justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+  }
+
+  .hero-search-filter-menu a {
+    color: #fefefe;
+    font-weight: bold;
+  }
+
+  .hero-search-filter-menu a .fa {
+    font-size: 1.125rem;
+    font-weight: normal;
+    text-decoration: none;
+  }
+
+  .hero-search-filter-menu a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-search-filter-form {
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    width: 95%;
+  }
+}
+
+.hero-search-filter-form-find,
+.hero-search-filter-form-near {
+  border: 0;
+  box-shadow: none;
+}
+
+.hero-search-filter-form-find:focus,
+.hero-search-filter-form-near:focus {
+  border: 0;
+  box-shadow: none;
+}
+
+body {
+  background-image: url("images/rustic-back.jpg");
+  background-repeat: repeat;
+  background-position: right top;
+  background-attachment: fixed;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+.prof-li {
+  font-size: 20px;
+  margin: 20px auto auto 20px
+}
+
+.img-circle {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto 10px 20px;
+  float: left;
+}
+
+h1 {
+  color: black;
+}
+
+h3 {
+  float: right;
+  margin-right: 20px;
+}
+
+.jumbotron p {
+  margin-bottom: 15px;
+  font-size: 12px;
+  font-weight: 200;
+  float: right;
+  margin-right: 20px;
+}
+
+
+/* The switch - the box around the slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+
+/* Hide default HTML checkbox */
+
+.switch input {
+  display: none;
+}
+
+
+/* The slider */
+
+.slider.round {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider.round:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+/*   CSS FOR TIMELINE   */
+
+.timeline .timeline-item::after,
+.timeline .timeline-item::before {
+  clear: both;
+  content: '';
+  display: block;
+  width: 100%;
+}
+
+.timeline {
+  margin: 30px auto;
+  padding: 0 10px;
+  position: relative;
+  transition: all 0.25s ease-in;
+  width: 100%;
+}
+
+.timeline::before {
+  background: #fefefe;
+  content: '';
+  height: 100%;
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 3px;
+}
+
+.timeline::after {
+  clear: both;
+  content: '';
+  display: table;
+  width: 100%;
+}
+
+.timeline a {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  transition: all 0.25s ease-in;
+}
+
+.timeline a:hover {
+  box-shadow: 0 1px 0px 0px #fefefe;
+  transition: all 0.25s ease-in;
+}
+
+.timeline .timeline-item {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.timeline .timeline-item .timeline-icon {
+  background: #d30505;
+  border-radius: 50%;
+  height: 50px;
+  left: 50%;
+  margin-left: -23px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 50px;
+}
+
+.timeline .timeline-item .timeline-icon img,
+.timeline .timeline-item .timeline-icon svg {
+  left: 14px;
+  position: relative;
+  top: 11px;
+}
+
+.timeline .timeline-item .timeline-icon svg {
+  top: 14px;
+}
+
+.timeline .timeline-item .timeline-content {
+  padding: 20px;
+  text-align: right;
+  transition: all 0.25s ease-in;
+  width: 45%;
+  background: transparent;
+}
+
+.timeline .timeline-item .timeline-content p {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.timeline .timeline-item .timeline-content p {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.timeline .timeline-item .timeline-content .timeline-content-date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.timeline .timeline-item .timeline-content .timeline-content-month {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.timeline .timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  text-align: left;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .timeline {
+    margin: 30px;
+    padding: 0;
+
+    width: 90%;
+    background: #fefefe;
+    padding: 0.25rem;
+    border-radius: 5px;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .hero-search-filter-form .divider {
+    background-color: #cacaca;
+    width: 1px;
+  }
+
+  .hero-search-filter-form label {
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    color: #8a8a8a;
+    font-weight: bold;
+  }
+
+  .hero-search-filter-form input,
+  .hero-search-filter-form .button {
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width: 39.9375em) {
+    .hero-search-filter-form {
+      width: 95%;
+    }
+  }
+
+  .hero-search-filter-form-find,
+  .hero-search-filter-form-near {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .hero-search-filter-form-find:focus,
+  .hero-search-filter-form-near:focus {
+    border: 0;
+    box-shadow: none;
+  }
+
+  body {
+    background-image: url("images/rustic-back.jpg");
+    background-repeat: repeat;
+    background-position: right top;
+    background-attachment: fixed;
+  }
+
+  #map {
+    width: 100%;
+    height: 400px;
+    background-color: grey;
+  }
+
+  .prof-li {
+    font-size: 20px;
+    margin: 20px auto auto 20px
+  }
+
+  .img-circle {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto 10px 20px;
+    float: left;
+  }
+
+  h1 {
+    color: black;
+  }
+
+  h3 {
+    float: right;
+    margin-right: 20px;
+  }
+
+  .jumbotron p {
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 200;
+    float: right;
+    margin-right: 20px;
+  }
+  /* The switch - the box around the slider */
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  /* Hide default HTML checkbox */
+
+  .switch input {
+    display: none;
+  }
+  /* The slider */
+
+  .slider.round {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider.round:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked+.slider {
+    background-color: #2196F3;
+  }
+
+  input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+
+  input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  /* Rounded sliders */
+
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  /*   CSS FOR TIMELINE   */
+
+  .timeline .timeline-item::after,
+  .timeline .timeline-item::before {
+    clear: both;
+    content: '';
+    display: block;
+    width: 100%;
+  }
+
+  .timeline {
+    margin: 30px auto;
+    padding: 0 10px;
+    position: relative;
+    transition: all 0.25s ease-in;
+    width: 100%;
+  }
+
+  .timeline::before {
+    background: #fefefe;
+    content: '';
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    width: 3px;
+  }
+
+  .timeline::after {
+    clear: both;
+    content: '';
+    display: table;
+    width: 100%;
+  }
+
+  .timeline a {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    transition: all 0.25s ease-in;
+  }
+
+  .timeline a:hover {
+    box-shadow: 0 1px 0px 0px #fefefe;
+    transition: all 0.25s ease-in;
+  }
+
+  .timeline .timeline-item {
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .timeline .timeline-item .timeline-icon {
+    background: #d30505;
+    border-radius: 50%;
+    height: 50px;
+    left: 50%;
+    margin-left: -23px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 50px;
+  }
+
+  .timeline .timeline-item .timeline-icon img,
+  .timeline .timeline-item .timeline-icon svg {
+    left: 14px;
+    position: relative;
+    top: 11px;
+  }
+
+  .timeline .timeline-item .timeline-icon svg {
+    top: 14px;
+  }
+
+  .timeline .timeline-item .timeline-content {
+    padding: 20px;
+    text-align: right;
+    transition: all 0.25s ease-in;
+    width: 45%;
+    background: transparent;
+  }
+
+  .timeline .timeline-item .timeline-content p {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .timeline .timeline-item .timeline-content p {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .timeline .timeline-item .timeline-content .timeline-content-date {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+
+  .timeline .timeline-item .timeline-content .timeline-content-month {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: right;
+    text-align: left;
+  }
+
+  @media screen and (max-width: 39.9375em) {
+    .timeline {
+      margin: 30px;
+      padding: 0;
+      width: 90%;
+    }
+    .timeline::before {
+      left: 0;
+    }
+    .timeline .timeline-item .timeline-content {
+      float: right;
+      text-align: left;
+      width: 90%;
+    }
+    .timeline .timeline-item .timeline-content::before {
+      border-left: 0;
+      border-right: 7px solid #fefefe;
+      left: 10%;
+      margin-left: -6px;
+    }
+    .timeline .timeline-item .timeline-icon {
+      left: 0;
+    }
+    .timeline .timeline-item:nth-child(even) .timeline-content {
+      float: right;
+      text-align: left;
+    }
+    @media screen and (max-width: 39.9375em) {
+      .timeline {
+        margin: 30px;
+        padding: 0;
+        width: 90%;
+      }
+      .timeline::before {
+        left: 0;
+      }
+      .timeline .timeline-item .timeline-content {
+        float: right;
+        text-align: left;
+        width: 90%;
+      }
+      .timeline .timeline-item .timeline-content::before {
+        border-left: 0;
+        border-right: 7px solid #fefefe;
+        left: 10%;
+        margin-left: -6px;
+      }
+      .timeline .timeline-item .timeline-icon {
+        left: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .jumbotron {
+    margin-top: 50px;
+  }
+  .container-fluid {
+    height: 150px;
+  }
+  #user_email {
+    float: right;
+  }
+  
+}

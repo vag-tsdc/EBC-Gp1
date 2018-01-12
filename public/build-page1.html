@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="assets/moment.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Eat.Beer.Crawl</title>
+</head>
+
+<body>
+    <!-- header -->
+    <div class="row">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="text-center">Create a Crawl...</h1>
+                <p class="text-center">Use the options to build a crawl, submit when complete...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- form begins -->
+    <div class="container">
+        <div class="row" id="create-crawl">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <h2>I'm trying to crawl...</h2>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+
+        <!-- crawl name -->
+        <div class="row" id="name-crawl">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <label for="basic-url">My crawl will be named... </label>
+                <!-- <span class="input-group-addon" id="basic-addon3">crawl</span> -->
+                <input type="text" class="form-control" id="new-crawl-name" aria-describedby="crawl-name">
+            </div>
+            <div class="col-xs-1"></div>
+
+        </div>
+
+        <!-- crawl team members -->
+        <div class="row" id="team-crawl">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <label for="crawl-team">I call upon...</label>
+
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="on-team">
+                    </span>
+                    <input type="email" class="form-control" placeholder="email@gmail.com" aria-label="team-member-name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="on-team">
+                    </span>
+                    <input type="email" class="form-control" placeholder="email@gmail.com" aria-label="team-member-name">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <input type="checkbox" aria-label="on-team">
+                    </span>
+                    <input type="email" class="form-control" placeholder="email@gmail.com" aria-label="team-member-name">
+                </div>
+
+
+                <div class="col-xs-1"></div>
+
+            </div>
+        </div>
+
+
+        <!-- crawl type -->
+        <div class="row" id="type-crawl">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+
+                <label for="basic-url">We are looking to get some...</label>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Action</a>
+                            </li>
+                            <li>
+                                <a href="#">Food</a>
+                            </li>
+                            <li>
+                                <a href="#">Drinks</a>
+                            </li>
+                            <li role="separator" class="divider"></li>
+                            <li>
+                                <a href="#">Random</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /btn-group -->
+                    <input type="text" class="form-control" aria-label="keyword-type-crawl" placeholder="Ex. Chinese, Sour Beer, Juice Bar, Cigars">
+
+                </div>
+
+            </div>
+            <div class="col-xs-1"></div>
+
+        </div>
+
+
+        <!-- crawl number of locations -->
+        <div class="row" id="location-number-crawl">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-10">
+                <label for="location-info">Number of Locations:</label>
+                <div id="slidecontainer">
+                    <input type="range" min="1" max="4" value="2" class="slider" id="set-location-number">
+                </div>
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+
+
+
+        << <!-- crawl start -->
+            <div class="row" id="start-crawl">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <div class="form-group">
+                        <label for="exampleInputName2">We'll start around...</label>
+                        <input type="location" class="form-control" id="start-date" placeholder="Ex. Portsmouth, NH">
+                        <input type="date" class="form-control" id="start-date" placeholder="MM/DD/YYY">
+                        <input type="time" class="form-control" id="start-time" placeholder="HH:MM:AM">
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+
+            </div>
+
+            <!-- crawl stop -->
+            <div class="row" id="end-crawl">
+
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+                    <div class="form-group">
+                        <label for="crawl-start">We'll end around...</label>
+                        <input type="location" class="form-control" id="start-date" placeholder="Ex. Dover, NH">
+                        <input type="date" class="form-control" id="end-date" placeholder="MM/DD/YYY">
+                        <input type="time" class="form-control" id="end-time" placeholder="HH:MM:AM">
+                    </div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <!-- crawl turn up or turn down -->
+            <div class="row" id="vibe-crawl">
+
+                <div class="col-xs-1"></div>
+                <div class="col-xs-2">
+                    <p class="text-left">Turn down.</p>
+                </div>
+                <div class="col-xs-6">
+                    <div id="slidecontainer">
+                        <input type="range" min="0" max="10" value="5" class="slider" id="set-crawl-vibe">
+                    </div>
+                </div>
+                <div class="col-xs-2">
+                    <p class="text-right">Turn Up!</p>
+                </div>
+                <div class="col-xs-1"></div>
+
+
+            </div>
+
+            <!-- crawl public or private -->
+            <div class="row" id="visable-crawl">
+
+                <div class="col-xs-1"></div>
+                <div class="col-xs-10">
+
+                </div>
+                <div class="col-xs-1"></div>
+
+
+            </div>
+
+            <!-- crawl filter save -->
+            <div class="row" id="save-crawl-filter">
+
+                <div class="col-xs-1"></div>
+                <div class="col-xs-7"></div>
+                <div class="col-xs-1">Save:</div>
+                <div class="col-xs-2">
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <!-- crawl submit -->
+            <div class="row" id="submit-reset-crawl">
+                <div class="col-xs-1"></div>
+                <div class="col-xs-8"></div>
+                <div class="col-xs-2">
+                    <button type="button" class="btn btn-warning">build it !</button>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+            <!-- close container -->
+    </div>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfbwSYOD_QK_8tWSFJgtCFSvGw_3G3JLU&callback=initMap">
+    </script>
+    <script src="assets/main.js"></script>
+</body>
+
+</html>

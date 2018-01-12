@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.4.1/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+
+    <script src="assets/moment.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.4.1/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+
+    <title>Eat.Beer.Crawl</title>
+</head>
+
+<body>
+    <!-- This is the nav bar - MAKE A STICKY STICKY -->
+    <div class="row">
+        <div class="col-xs-12">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-left" href="index.html">
+                            <img alt="Brand" src="assets/images/eatbeercrawl-logo-notext-04.png" width=100>
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li id="btnLogin">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-log-in"></span>Login</a>
+                        </li>
+                        <li>
+                            <p class="userInformation" id="user_email"></p>
+                        </li>
+                        <li id="btnLogout">
+                            <a href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <!-- User Name & Email Listed from original index.html -->
+
+    <!-- <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 userInformation">
+                <h1 id="user_name"></h1>
+
+                <!-- <p id="user_email"></p> -->
+            <!-- </div>
+        </div>
+    </div> --> -->
+
+   
+
+    <!-- Profile Page starts here... -->
+
+
+
+
+
+    <div id="user-signed-in">
+        <div class="jumbotron">
+            <div class="container-fluid center-content">
+                <img id="user-profile-pic" class="img-circle" src="assets/images/blank-profile-picture.png" alt="Generic placeholder image">
+                <h3 id="display_name"></h3>
+                <br>
+                <!-- <p class="display-bio"> Google Biography</p> -->
+            </div>
+        </div>
+        <div class="row">
+            <br>
+        </div>
+        <div class="container-fluid center-content">
+            <div class="row">
+                <div class="col-xs-1"></div>
+
+                <div class="col-xs-10">
+                    <!-- Build Crawl Button Option  -->
+                    <img src="assets/images/drinks-drinks.png" width=300>
+
+                    <br>
+                    <div class="container-fluid create-a-crawl-btn">
+                        <!-- Trigger the modal with a button -->
+                        <button type="button" class="modalbtn btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Create A Crawl!</button>
+
+                        <!-- Modal -->
+                        <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        <h4 class="modal-title">Create A Crawl! </h4>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        <header class="hero-search-filter">
+                                            <div class="hero-search-filter-content">
+                                                <form class="hero-search-filter-form">
+                                                    <div class="col-sm-12">
+                                                        <label for="nametext">Crawl Name : </label>
+                                                        <input id="crawl-name" class="hero-search-filter-form-find" type="text" placeholder="Turn Up Squad">
+                                                        <div class="divider">&nbsp;</div>
+
+                                                        <label for="findtext">What Are You Trying to Get Into?:</label>
+                                                        <select id="search-type" name="numLocate">
+
+
+                                                            <option value="bars">Bars</option>
+                                                            <option value="brewery">Breweries</option>
+                                                            <option value="nightclub">Nightclubs</option>
+                                                            <option value="attractions">Attractions</option>
+                                                            <option value="pizza">Pizza</option>
+                                                        </select>
+                                                        <div class="divider">&nbsp;</div>
+
+                                                        <label for="findlocate">Where?</label>
+                                                        <input id="search-location" class="hero-search-filter-form-near" type="text" onfocus="geolocate()" />
+                                                        <div class="divider">&nbsp;</div>
+
+                                                        <label for="numLocate">Number of Establishments You Wish to Disturb : </label>
+                                                        <select id="num_ques" name="numLocate">
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                        </select>
+                                                        <br>
+                                                        <button class="btn btn-default button" id="the_submit_button" type="submit">Build My Crawl!</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </header>
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Nevermind.</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Modal Ends -->
+                </div>
+            </div>
+        </div>
+        <div id="allOfTheTrips">
+
+        </div>
+    </div>
+
+
+    <div id="user-not-logged-in text-center">
+        <div class="row">
+            <div class="col-xs-1"></div>
+
+            <div class="col-xs-10">
+                <img src="assets/images/eatbeercrawl-logo-sample-03.png">
+                <br>
+                <div class="container" id="preinfo-text">
+                    <h1 class="text-center">You pick the city. We build the quest.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="assets/main.js"></script>
+    <script src="assets/authentication.js"></script>
+    <script src="assets/firestore.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAKJqLe1Q9G3f3ev0JB3AwbZJZsN8uI2w&libraries=places&callback=initMap">
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.4.1/firebaseui.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.4.1/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <title>Eat.Beer.Crawl</title>
+</head>
+
+<body>
+
+    <!-- This is the nav bar - MAKE A STICKY STICKY -->
+    <div class="row">
+        <div class="col-xs-12">
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-left" href="index.html">
+                            <img alt="Brand" src="assets/images/eatbeercrawl-logo-notext-04.png" width=100>
+                        </a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li id="btnLogin">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-log-in"></span> Login</a>
+                        </li>
+                        <li>
+                            <p class="userInformation" id="user_email"></p>
+                        </li>
+                        <li id="btnLogout">
+                            <a href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+
+    <div class="jumbotron">
+        <h1 class="text-center">Let's Get Ready To Crawl</h1>
+        <h2 class="text-center" id="crawl-name"></h2>
+    </div>
+    <div class="row">
+        <div class="container-fluid">
+            <h1 class="container text-center">These are your directions...</h1>
+        </div>
+        <div class="container" id="map-body"> 
+            
+            <div id="map">
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+
+            <div class="timeline">
+
+
+            </div>
+            <div class="col-xs-1"></div>
+        </div>
+
+        <script src="assets/authentication.js"></script>
+        <script src="assets/main.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAKJqLe1Q9G3f3ev0JB3AwbZJZsN8uI2w&libraries=places&callback=initMap">
+        </script>
+</body>
+
+</html>
